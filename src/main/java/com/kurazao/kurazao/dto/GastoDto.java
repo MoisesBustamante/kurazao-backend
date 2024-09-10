@@ -8,6 +8,6 @@ import java.time.LocalDateTime;
 public class GastoDto {
     private int id_gasto;
     private  String descripcion;
-    private String monto;
+    private Double monto;
     private LocalDateTime fecha_gasto;
 }
