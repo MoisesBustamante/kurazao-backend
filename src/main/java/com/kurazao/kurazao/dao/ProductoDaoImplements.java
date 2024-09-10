@@ -20,15 +20,15 @@ public class ProductoDaoImplements implements   ProductoDaoInterface{
     }
     @Override
     public void Insertar(ProductoDto productoDto) throws DaoExceptions {
-        String INSERT="INSERT INTO productos(id_producto, nombre, descripcion, costo, precio_venta, cantidad_inventario, fecha_creacion) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String INSERT="INSERT INTO productos( nombre, descripcion, costo, precio_venta, cantidad_inventario) VALUES (?, ?, ?, ?, ?)";
         jdbcTemplate.update(INSERT,
-                productoDto.getId_producto(),
+
                 productoDto.getNombre(),
                 productoDto.getDescripcion(),
                 productoDto.getCosto(),
                 productoDto.getPrecio_venta(),
-                productoDto.getCantidad_inventario(),
-                productoDto.getFecha_creacion()
+                productoDto.getCantidad_inventario()
+
         );
         return;
     }

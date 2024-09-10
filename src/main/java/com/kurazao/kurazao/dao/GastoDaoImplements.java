@@ -20,12 +20,12 @@ public class GastoDaoImplements implements  GastoDaoInterface{
     }
     @Override
     public void Insertar(GastoDto gastoDto) throws DaoExceptions {
-        String INSERT="INSERT INTO gastos(id_gasto,descripcion, monto, fecha_gasto) VALUES (?, ?, ?, ?)";
+        String INSERT="INSERT INTO gastos(descripcion, monto) VALUES (?, ?)";
         jdbcTemplate.update(INSERT,
-                gastoDto.getId_gasto(),
+
                 gastoDto.getDescripcion(),
-                gastoDto.getMonto(),
-                gastoDto.getFecha_gasto()
+                gastoDto.getMonto()
+
         );
         return;
     }
@@ -55,11 +55,12 @@ public class GastoDaoImplements implements  GastoDaoInterface{
     @Override
     public void Actualizar(GastoDto gastoDto) throws DaoExceptions {
         try {
-            String UPDATE="UPDATE productos SET  descripcion=?, monto=?, fecha_gasto=? WHERE  id_gasto=?";
+            String UPDATE="UPDATE gastos SET  descripcion=?, monto=? WHERE  id_gasto=?";
             jdbcTemplate.update(UPDATE,
+
                     gastoDto.getDescripcion(),
                     gastoDto.getMonto(),
-                    gastoDto.getFecha_gasto());
+                    gastoDto.getId_gasto());
         }catch (DataAccessException ex){
             throw new DaoExceptions(ex);
         }catch (Exception ex){
