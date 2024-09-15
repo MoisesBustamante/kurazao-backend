@@ -1,7 +1,10 @@
 package com.kurazao.kurazao.dto;
 
+import lombok.Data;
+
 import java.io.Serial;
 import java.time.LocalDateTime;
+@Data
 
 public class VentasDto {
     private Serial id_venta;

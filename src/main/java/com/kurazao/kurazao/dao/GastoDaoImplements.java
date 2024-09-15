@@ -3,7 +3,7 @@ package com.kurazao.kurazao.dao;
 import com.kurazao.kurazao.dto.GastoDto;
 import com.kurazao.kurazao.exceptions.DaoExceptions;
 import com.kurazao.kurazao.mapper.GastoMapper;
-import com.kurazao.kurazao.mapper.ProductoMapper;
+
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
